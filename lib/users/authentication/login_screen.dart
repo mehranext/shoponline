@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Loginscreen extends StatefulWidget {
+  const Loginscreen({super.key});
+
 
 
   @override
@@ -57,8 +59,10 @@ class _LoginscreenState extends State<Loginscreen>
                            child: Padding(
                              //LTRB: Left & Top & Right & Button
                              padding: const EdgeInsets.fromLTRB(30,30,30,8),
+                             //lets create our textfeild and buttons / form and row is under coverd by column
                              child: Column(
                                children: [
+                                 //email - password - login button.
                                  Form(
                                    key: formkey ,
                                    child: Column(
@@ -182,7 +186,56 @@ class _LoginscreenState extends State<Loginscreen>
                                        )
                                      ],
                                    ) ,
-                                 )
+                                 ),
+                                 SizedBox(height: 16,),
+                                 //dont have acc?- button widget signup
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   children: [
+                                     const Text(
+                                         'Dont Have an Account?',style: TextStyle(color: Colors.white,fontSize: 16,
+                                     ),
+                                     ),
+                                     TextButton(
+                                         onPressed: ()
+                                         {
+
+                                         },
+                                         child: const Text(
+                                             'SignUp Here',style: TextStyle(color: Colors.lightGreenAccent),
+                                         ),
+                                     ),
+                                   ],
+
+                                 ),
+
+                                 //or text:)
+                                 const Text(
+                                   'Or',
+                                   style: TextStyle(color: Colors.greenAccent,fontSize: 16,
+                                   ),
+                                 ),
+
+                                 //are u admin?
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   children: [
+                                     const Text(
+                                         'Are You Admin?', style: TextStyle(color: Colors.white,fontSize: 16,
+                                     ),
+                                     ),
+                                     TextButton(
+                                       onPressed: ()
+                                       {
+
+                                       },
+                                       child: const Text(
+                                           'Click Here', style: TextStyle(color: Colors.lightGreenAccent),
+                                       ),
+                                     ),
+                                   ],
+
+                                 ),
                                ],
                              ),
                            )  ,
