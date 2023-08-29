@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shoponline/users/authentication/signup_screen.dart';
 
 class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
@@ -199,7 +200,7 @@ class _LoginscreenState extends State<Loginscreen>
                                      TextButton(
                                          onPressed: ()
                                          {
-
+                                           Get.to(Signupscreen());
                                          },
                                          child: const Text(
                                              'SignUp Here',style: TextStyle(color: Colors.lightGreenAccent),
