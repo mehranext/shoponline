@@ -1,10 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:shoponline/api_connection/api_connection.dart';
 import 'package:shoponline/users/authentication/login_screen.dart';
+import 'package:http/http.dart' as http;
+import 'package:shoponline/users/model/user.dart';
 
 class Signupscreen extends StatefulWidget {
-  const Signupscreen({super.key});
-
+   const Signupscreen({super.key});
 
 
   @override
@@ -18,6 +23,75 @@ class _SignupscreenState extends State<Signupscreen>
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   var isObsecure= true.obs;
+
+  validateUserEmail() async
+  {
+   try
+       {
+         var res= await http.post(
+           Uri.parse(API.validateEmail),
+           body: {
+             'user_email':emailController.text.trim(),
+           },
+         );
+         if(res.statusCode==200) //com flutter app the connection with api to server - successs
+           {
+             var resBodyOfValidateEmail=jsonDecode(res.body);
+
+             if (resBodyOfValidateEmail['emailFound']==true)
+               {
+                Fluttertoast.showToast(msg: "Email is already Used . Try Another Email");
+               }
+             else{
+                 registerAndsaveUserRecord();
+               //register & save new user record to database
+             }
+       }
+       }
+       catch(e)
+    {
+
+    }
+  }
+  registerAndsaveUserRecord() async
+  {
+   User userModel = User(
+     //id
+     1,
+     //name
+     nameController.text.trim(),
+     //email
+     emailController.text.trim(),
+     //password
+     passwordController.text.trim(),
+
+   );
+   
+   try{
+     
+    var res = await http.post(
+       Uri.parse(API.signUp),
+           body: userModel.toJson(),
+     );
+     if (res.statusCode == 200){
+       var resBodyOfSignUp=jsonDecode(res.body);
+       if(resBodyOfSignUp['success'] ==true){
+         Fluttertoast.showToast(msg: 'Congratulations!! You Are Sign Up Successsfully');
+       }
+       else{
+         Fluttertoast.showToast(msg: 'Error  Occured . Try Again Please');
+       }
+     }
+   }
+   
+   catch(e)
+   {
+     print(e.toString());
+     Fluttertoast.showToast(msg: e.toString());
+   }
+  }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -207,7 +281,7 @@ class _SignupscreenState extends State<Signupscreen>
                                       child: InkWell(
                                         onTap: ()
                                         {
-
+                                          if(formkey.currentState!.validate());
                                         },
                                         borderRadius: BorderRadius.circular(30),
                                         child: const Padding(
@@ -240,7 +314,7 @@ class _SignupscreenState extends State<Signupscreen>
                                   TextButton(
                                     onPressed: ()
                                     {
-                                    Get.to(Loginscreen());
+                                    Get.to(const Loginscreen());
                                     },
                                     child: const Text(
                                       'Login Here',style: TextStyle(color: Colors.lightGreenAccent),
