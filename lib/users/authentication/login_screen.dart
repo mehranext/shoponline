@@ -1,6 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shoponline/api_connection/api_connection.dart';
 import 'package:shoponline/users/authentication/signup_screen.dart';
+import 'package:http/http.dart' as http;
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shoponline/users/fragments/dashbord_of_fragments.dart';
+import 'package:shoponline/users/model/user.dart';
+import 'package:shoponline/users/userperferences/user_preferences.dart';
+
 
 class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
@@ -17,6 +26,42 @@ class _LoginscreenState extends State<Loginscreen>
    var emailController = TextEditingController();
    var passwordController = TextEditingController();
    var isObsecure= true.obs;
+
+   loginUserNow() async
+   {
+     try
+     {
+       var res = await http.post(
+         Uri.parse(API.login),
+         body: { "user_email": emailController.text.trim(),
+           "user_password": passwordController.text.trim(),
+         },
+       );
+
+       if (res.statusCode == 200) {
+         var resBodyOfLogin = jsonDecode(res.body);
+         if (resBodyOfLogin['success'] == true) {
+           Fluttertoast.showToast(
+               msg: "Congratulations!! You Are loged in Successfully");
+
+           User userInfo =    User.fromJson(resBodyOfLogin["userData"]);
+           //save user info to local storage (using shared preferences).
+           await RememberUserPrefs.saveRememberUser(userInfo);
+           Future.delayed(const Duration(milliseconds: 2000), ()
+           {
+             Get.to(const DashbordOfFragments());
+           });
+         } else {
+           Fluttertoast.showToast(msg: "please write correct password or email , Try Again Please");
+         }
+       }
+     }
+     catch(errorMSG)
+     {
+       print("Error :: "+errorMSG.toString());
+     }
+   }
+
   @override
   Widget build(BuildContext context) {
 
@@ -167,7 +212,9 @@ class _LoginscreenState extends State<Loginscreen>
                                          child: InkWell(
                                            onTap: ()
                                            {
-
+                                            if(formkey.currentState!.validate()){
+                                              loginUserNow();
+                                            }
                                            },
                                            borderRadius: BorderRadius.circular(30),
                                            child: const Padding(
