@@ -46,10 +46,10 @@ class _LoginscreenState extends State<Loginscreen>
 
            User userInfo =    User.fromJson(resBodyOfLogin["userData"]);
            //save user info to local storage (using shared preferences).
-           await RememberUserPrefs.saveRememberUser(userInfo);
+           await RememberUserPrefs.saveUserInfo(userInfo);
            Future.delayed(const Duration(milliseconds: 2000), ()
            {
-             Get.to(const DashbordOfFragments());
+             Get.to(DashbordOfFragments());
            });
          } else {
            Fluttertoast.showToast(msg: "please write correct password or email , Try Again Please");
@@ -235,7 +235,7 @@ class _LoginscreenState extends State<Loginscreen>
                                      ],
                                    ) ,
                                  ),
-                                 SizedBox(height: 16,),
+                                 const SizedBox(height: 16,),
                                  //dont have acc?- button widget signup
                                  Row(
                                    mainAxisAlignment: MainAxisAlignment.center,
@@ -247,7 +247,7 @@ class _LoginscreenState extends State<Loginscreen>
                                      TextButton(
                                          onPressed: ()
                                          {
-                                           Get.to(Signupscreen());
+                                           Get.to(const Signupscreen());
                                          },
                                          child: const Text(
                                              'SignUp Here',style: TextStyle(color: Colors.lightGreenAccent),
