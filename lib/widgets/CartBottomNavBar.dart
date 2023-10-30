@@ -9,7 +9,7 @@ class CartBottomNavBar extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
         height: 130,
-        child: const Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
@@ -28,7 +28,25 @@ class CartBottomNavBar extends StatelessWidget {
                   fontWeight: FontWeight.normal,
                 ),
                 ),
-            ],),
+            ],
+            ),
+            Container(
+              //Text CheckOut that should be in below
+              alignment: Alignment.center,
+              height: 49,
+              width: double.infinity ,
+              decoration:BoxDecoration(
+                color: darkblueColor,
+                borderRadius: BorderRadius.circular(20),
+              ) ,
+              child: Text("Check Out",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
         ),
       ),
