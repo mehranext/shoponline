@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../consts/colors.dart';
+import '../pages/itempage.dart';
 
 class ItemsWidget extends StatelessWidget {
   const ItemsWidget({super.key});
@@ -46,7 +48,9 @@ class ItemsWidget extends StatelessWidget {
                   Icon(Icons.favorite_border,color: Colors.red,)
                 ],
               ),
-              InkWell(onTap: (){},
+              InkWell(onTap: (){
+                Get.to(ItemPage());
+              },
                 child: Container(
                   margin: EdgeInsets.all(10),
                   //$i -> is related to for cycle that we create and
