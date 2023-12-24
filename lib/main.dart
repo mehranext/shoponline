@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shoponline/consts/themes.dart';
 import 'package:shoponline/users/authentication/login_screen.dart';
 import 'package:shoponline/users/fragments/dashbord_of_fragments.dart';
 import 'package:shoponline/users/userPerferences/user_preferences.dart';
@@ -20,9 +21,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Online Shop',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
+      theme: Themes().lightTheme,
+      darkTheme: Themes().darkTheme,
       home: FutureBuilder(
         future: RememberUserPrefs.readUserInfo(),
         builder: (context, dataSnapshot)
