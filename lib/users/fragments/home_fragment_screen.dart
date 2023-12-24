@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:shoponline/widgets/Sidebar.dart';
 import 'package:shoponline/widgets/homeAppBar.dart';
 
 import '../../widgets/categoriesWidget.dart';
@@ -12,6 +14,7 @@ class HomeFragmentScreen extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer:SideBar(),
       body: ListView(children: [
         const HomeAppBar(),
         Container(
