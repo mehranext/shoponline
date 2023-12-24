@@ -10,7 +10,7 @@ class ProfileFragmentScreen extends StatelessWidget
 
 signOutUser() async
 {
-var resuldResponse =  await Get.dialog(
+var resultResponse =  await Get.dialog(
   AlertDialog(
     backgroundColor: Colors.grey,
     title: const Text(
@@ -47,7 +47,7 @@ var resuldResponse =  await Get.dialog(
   ),
 );
 
-if(resuldResponse== 'loggedOut')
+if(resultResponse== 'loggedOut')
 {
   //delet the user data from phone local storage
 
