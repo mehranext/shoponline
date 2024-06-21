@@ -5,9 +5,7 @@ import 'package:shoponline/widgets/CartBottomNavBar.dart';
 import '../../widgets/CartAppBar.dart';
 import '../../widgets/CartSamples.dart';
 
-class OrderFragmentScreen extends StatelessWidget
-
-{
+class OrderFragmentScreen extends StatelessWidget {
   const OrderFragmentScreen({super.key});
   @override
   Widget build(BuildContext context) {
@@ -15,9 +13,8 @@ class OrderFragmentScreen extends StatelessWidget
       body: ListView(
         children: [
           const CartAppbar(),
-
           Container(
-          //temporary height
+            //temporary height
             height: 700,
             padding: const EdgeInsets.only(top: 15),
             decoration: const BoxDecoration(
@@ -27,40 +24,48 @@ class OrderFragmentScreen extends StatelessWidget
                 topLeft: Radius.circular(35),
               ),
             ),
-            child: Column(children: [
-              const CartItemSamples(),
-              Container(
-                // decoration: BoxDecoration(
-                //   borderRadius: BorderRadius.circular(10),
-                // ),
-                margin: const EdgeInsets.symmetric(vertical: 20,horizontal: 15),
-                padding: const EdgeInsets.all(10),
-                child: Row(children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: darkblueColor,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Icon(Icons.add,color: Colors.white,
-                    ),
+            child: Column(
+              children: [
+                const CartItemSamples(),
+                Container(
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(10),
+                  // ),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: darkblueColor,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          "Add Coupon Code",
+                          style: TextStyle(
+                            color: darkblueColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  const Padding(
-                      padding:EdgeInsets.symmetric(horizontal: 10),
-                    child: Text("Add Coupon Code",
-                    style: TextStyle(
-                    color: darkblueColor,
-                    fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                    ),
-                  ),
-                ],),
-              )
-            ],),
+                )
+              ],
+            ),
           ),
         ],
       ),
-      bottomNavigationBar:const CartBottomNavBar() ,
+      bottomNavigationBar: const CartBottomNavBar(),
     );
   }
 }
