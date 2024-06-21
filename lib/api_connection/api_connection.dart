@@ -1,5 +1,5 @@
 class API {
-  static const hostConnect = "http://192.168.91.74/api_shop_app";
+  static const hostConnect = "http://192.168.85.74/api_shop_app";
   //addressing User folder in api file
   static const hostConnectUser = "$hostConnect/user";
 //signUp user in api and validate file and addressing again
