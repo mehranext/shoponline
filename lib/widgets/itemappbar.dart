@@ -9,7 +9,7 @@ class ItemAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.all(25),
+      padding: const EdgeInsets.all(25),
       child:
       Row(
         children: [
@@ -17,12 +17,12 @@ class ItemAppBar extends StatelessWidget {
             onTap: (){
               Get.put(context);
             },
-            child: Icon(Icons.arrow_back,
+            child: const Icon(Icons.arrow_back,
             size: 30,
             color: darkblueColor,
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 20),
+          const Padding(padding: EdgeInsets.only(left: 20),
           child: Text("Products",
             style: TextStyle(
               fontSize: 23,
@@ -31,8 +31,8 @@ class ItemAppBar extends StatelessWidget {
           ),
           ),
           ),
-          Spacer(),
-          Icon(Icons.favorite,size: 30,color: Colors.red,)
+          const Spacer(),
+          const Icon(Icons.favorite,size: 30,color: Colors.red,)
         ],
       ),
     );

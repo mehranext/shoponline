@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:shoponline/widgets/Sidebar.dart';
 import 'package:shoponline/widgets/homeAppBar.dart';
@@ -14,13 +13,13 @@ class HomeFragmentScreen extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer:SideBar(),
+      drawer:const SideBar(),
       body: ListView(children: [
         const HomeAppBar(),
         Container(
           //height: 500,
-          padding: EdgeInsets.only(top: 15),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.only(top: 15),
+          decoration: const BoxDecoration(
             color: Color(0xFFEDECF2),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35),
@@ -31,8 +30,8 @@ class HomeFragmentScreen extends StatelessWidget
             children: [
               //search Widget
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 15),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 height: 50,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -41,7 +40,7 @@ class HomeFragmentScreen extends StatelessWidget
                 child:Row(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 5),
+                      margin: const EdgeInsets.only(left: 5),
                       height: 50,
                       width: 300,
                       child: TextFormField(
@@ -51,8 +50,8 @@ class HomeFragmentScreen extends StatelessWidget
                         ),
                         ),
                       ),
-                    Spacer(),
-                    Icon(
+                    const Spacer(),
+                    const Icon(
                         Icons.camera_alt,
                       size: 27,
                       color: Color(0xFF4C53A5),
@@ -64,11 +63,11 @@ class HomeFragmentScreen extends StatelessWidget
               //categories
               Container(
                 alignment: Alignment.centerLeft,
-                margin: EdgeInsets.symmetric(
+                margin: const EdgeInsets.symmetric(
                   vertical: 20,
                   horizontal: 10,
                 ),
-                child: Text(
+                child: const Text(
                     "Categories",
                   style: TextStyle(fontWeight: FontWeight.bold,
                   fontSize: 25,
@@ -76,14 +75,14 @@ class HomeFragmentScreen extends StatelessWidget
                 ),
               ),
               //categories
-              CategoriesWidget(),
+              const CategoriesWidget(),
 
               //items
               Container(
                 alignment: Alignment.centerLeft,
-                margin: EdgeInsets.symmetric(
+                margin: const EdgeInsets.symmetric(
                   vertical: 20, horizontal: 10,),
-                child: Text(
+                child: const Text(
                   "Best Selling",
                   style: TextStyle(
                     fontSize: 25,
@@ -94,7 +93,7 @@ class HomeFragmentScreen extends StatelessWidget
               ),
 
               //itemsWidget
-              ItemsWidget(),
+              const ItemsWidget(),
             ],
           ),
         ),

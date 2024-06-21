@@ -10,7 +10,7 @@ class ItemBottomNavBar extends StatelessWidget {
     return BottomAppBar(
         child: Container(
           height: 70,
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -19,28 +19,28 @@ class ItemBottomNavBar extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 3,
                 blurRadius: 10,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ]),
           child: Row(
             children: [
-              Text("\$120",
+              const Text("\$120",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: darkblueColor,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               ElevatedButton.icon(onPressed: (){},
-                  icon:Icon(CupertinoIcons.cart_badge_plus) ,
-                  label: Text("Add To Cart",
+                  icon:const Icon(CupertinoIcons.cart_badge_plus) ,
+                  label: const Text("Add To Cart",
                   style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
                     ),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(darkblueColor),
-                  padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 13,horizontal: 15,)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  backgroundColor: WidgetStateProperty.all(darkblueColor),
+                  padding: WidgetStateProperty.all(const EdgeInsets.symmetric(vertical: 13,horizontal: 15,)),
+                  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                     )

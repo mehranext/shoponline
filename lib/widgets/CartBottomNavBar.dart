@@ -7,12 +7,12 @@ class CartBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
         height: 130,
         child:  Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Total",style: TextStyle(
@@ -39,7 +39,7 @@ class CartBottomNavBar extends StatelessWidget {
                 color: darkblueColor,
                 borderRadius: BorderRadius.circular(20),
               ) ,
-              child: Text("Check Out",
+              child: const Text("Check Out",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,

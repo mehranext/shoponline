@@ -14,13 +14,13 @@ class OrderFragmentScreen extends StatelessWidget
     return Scaffold(
       body: ListView(
         children: [
-          CartAppbar(),
+          const CartAppbar(),
 
           Container(
           //temporary height
             height: 700,
-            padding: EdgeInsets.only(top: 15),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.only(top: 15),
+            decoration: const BoxDecoration(
               color: Color(0xFFEDECF2),
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(35),
@@ -28,23 +28,23 @@ class OrderFragmentScreen extends StatelessWidget
               ),
             ),
             child: Column(children: [
-              CartItemSamples(),
+              const CartItemSamples(),
               Container(
                 // decoration: BoxDecoration(
                 //   borderRadius: BorderRadius.circular(10),
                 // ),
-                margin: EdgeInsets.symmetric(vertical: 20,horizontal: 15),
-                padding: EdgeInsets.all(10),
+                margin: const EdgeInsets.symmetric(vertical: 20,horizontal: 15),
+                padding: const EdgeInsets.all(10),
                 child: Row(children: [
                   Container(
                     decoration: BoxDecoration(
                       color: darkblueColor,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Icon(Icons.add,color: Colors.white,
+                    child: const Icon(Icons.add,color: Colors.white,
                     ),
                   ),
-                  Padding(
+                  const Padding(
                       padding:EdgeInsets.symmetric(horizontal: 10),
                     child: Text("Add Coupon Code",
                     style: TextStyle(
@@ -60,7 +60,7 @@ class OrderFragmentScreen extends StatelessWidget
           ),
         ],
       ),
-      bottomNavigationBar:CartBottomNavBar() ,
+      bottomNavigationBar:const CartBottomNavBar() ,
     );
   }
 }

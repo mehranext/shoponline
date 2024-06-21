@@ -3,9 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:shoponline/consts/themes.dart';
 import 'package:shoponline/users/fragments/favorites_fragments_screen.dart';
-import 'package:shoponline/users/userPerferences/current_user.dart';
 class SideBar extends StatelessWidget {
   const SideBar({super.key});
 
@@ -16,12 +14,12 @@ class SideBar extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-              accountName: Text("Mehran"),
-              accountEmail: Text("mehanalaei1219@gmail.com"),
+              accountName: const Text("Mehran"),
+              accountEmail: const Text("mehanalaei1219@gmail.com"),
           currentAccountPicture: CircleAvatar(
             child: ClipOval(child: Image.asset("images/12.jpg",height:80 ,width: 80,fit: BoxFit.cover,),)
           ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(image: AssetImage("images/login.jpg",
               ),
                 fit: BoxFit.cover,
@@ -29,50 +27,50 @@ class SideBar extends StatelessWidget {
           ),
           ),
           ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text("favorites"),
-            onTap: ()=> Get.to(FavoriteFragmentScreen()),
+            leading: const Icon(Icons.favorite),
+            title: const Text("favorites"),
+            onTap: ()=> Get.to(const FavoriteFragmentScreen()),
           ),
           ListTile(
-            leading: Icon(Icons.people),
-            title: Text("friends"),
-            onTap: ()=> Get.to(FavoriteFragmentScreen()),
+            leading: const Icon(Icons.people),
+            title: const Text("friends"),
+            onTap: ()=> Get.to(const FavoriteFragmentScreen()),
           ),
           ListTile(
-            leading: Icon(Icons.share),
-            title: Text("share"),
-            onTap: ()=> Get.to(FavoriteFragmentScreen()),
+            leading: const Icon(Icons.share),
+            title: const Text("share"),
+            onTap: ()=> Get.to(const FavoriteFragmentScreen()),
           ),
           ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text("Request"),
-            onTap: ()=> null,
+            leading: const Icon(Icons.notifications),
+            title: const Text("Request"),
+            onTap: (){},
             trailing: Container(
               color: Colors.red,
               width: 20,
               height: 20,
-              child: Center(
+              child: const Center(
                 child: Text('10'),
               ),
             ),
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text("settings"),
-            onTap: ()=> Get.to(FavoriteFragmentScreen()),
+            leading: const Icon(Icons.settings),
+            title: const Text("settings"),
+            onTap: ()=> Get.to(const FavoriteFragmentScreen()),
           ),
           ListTile(
-            leading: Icon(Icons.light_mode),
-            title: Text("Theme"),
+            leading: const Icon(Icons.light_mode),
+            title: const Text("Theme"),
             onTap: (){
               Get.changeTheme(Get.isDarkMode?ThemeData.light():ThemeData.dark());
             },
           ),
-          Divider(),
+          const Divider(),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text("Exit"),
+            leading: const Icon(Icons.exit_to_app),
+            title: const Text("Exit"),
             onTap: (){
               //EXIT CODE (DART IO ON TOP REQUIRED)
               if (Platform.isAndroid){
@@ -83,11 +81,11 @@ class SideBar extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.info),
-            title: Text("about"),
+            leading: const Icon(Icons.info),
+            title: const Text("about"),
             onTap: () {
-              AlertDialog(title:
-              Text('About:\"Nothing to explain thank you"'),
+              const AlertDialog(title:
+              Text('About:"Nothing to explain thank you"'),
               );
             }
           ),

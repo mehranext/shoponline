@@ -11,8 +11,8 @@ class CategoriesWidget extends StatelessWidget {
         children: [
           for (int i = 1; i<10;i++)
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
-          padding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -25,7 +25,7 @@ class CategoriesWidget extends StatelessWidget {
                 width: 40,
                 height: 40,
               ),
-              Text("Bag",
+              const Text("Bag",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 17,

@@ -12,7 +12,7 @@ class CartItemSamples extends StatelessWidget {
         for (int i = 1; i<4; i++)
         Container(
         height: 110,
-        margin: EdgeInsets.symmetric(horizontal: 15 ,vertical: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 15 ,vertical: 10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10
@@ -27,7 +27,7 @@ class CartItemSamples extends StatelessWidget {
           Container(
             height: 70,
             width: 70,
-            margin: EdgeInsets.only(right: 15),
+            margin: const EdgeInsets.only(right: 15),
             //$i for changing images in our loop on the top,
             child: Image.asset("images/$i.png"),
           ),
@@ -53,19 +53,19 @@ class CartItemSamples extends StatelessWidget {
          ],
          ),
           ),
-          Spacer(),
-          Padding(padding: EdgeInsets.symmetric(vertical: 5),
+          const Spacer(),
+          Padding(padding: const EdgeInsets.symmetric(vertical: 5),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.delete,
+              const Icon(Icons.delete,
               color: Colors.red,
               ),
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -76,12 +76,12 @@ class CartItemSamples extends StatelessWidget {
                         )
                       ]
                     ),
-                     child: Icon(CupertinoIcons.minus,
+                     child: const Icon(CupertinoIcons.minus,
                      size: 18,
                      ),
                   ),
-                  Container(margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text("01",
+                  Container(margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: const Text("01",
                     style: TextStyle(
                       fontWeight: FontWeight.normal,
                       fontSize: 16,
@@ -89,7 +89,7 @@ class CartItemSamples extends StatelessWidget {
                     ),),
                   ),
                   Container(
-                    padding: EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -100,7 +100,7 @@ class CartItemSamples extends StatelessWidget {
                           )
                         ]
                     ),
-                    child: Icon(CupertinoIcons.plus,
+                    child: const Icon(CupertinoIcons.plus,
                       size: 18,
                     ),
                   ),
